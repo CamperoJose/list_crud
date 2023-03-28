@@ -1,27 +1,16 @@
 import 'package:flutter/material.dart';
 
 import '../componentes/app_bar_component.dart';
+import '../model/list.dart';
 
 
-class HomePage extends StatefulWidget {
-  @override
-  _HomePage createState() => _HomePage();
-}
-
-
-class _HomePage extends State<HomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     String dropdownValue;
-    List<String> list = ['a', 'b', 'c'];
+    List<String> list = listedElements.getList();
 
     return Scaffold(
     appBar: MyAppBar(title: 'Cubit CRUD'),
@@ -34,9 +23,7 @@ class _HomePage extends State<HomePage> {
               value: list[0],
               onChanged: (String? newValue) {
                 // Código que se ejecuta cuando se selecciona una opción del menú
-                setState(() {
-                  dropdownValue = newValue!;
-                });
+
               },
               items: list.map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
@@ -84,9 +71,6 @@ class _HomePage extends State<HomePage> {
               backgroundColor: MaterialStateProperty.all<Color>(Colors.blueGrey),
             ),
           )
-
-
-
 
           ],
         ),

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:list_crud/vista/home.dart';
+
+import 'lb/delete_cubit.dart';
+import 'lb/list_cubit.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,10 +22,10 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => HomePage(),
-      },
+      home: BlocProvider(
+        create: (context) => ListCubit(),
+        child: HomePage(),
+      ),
     );
   }
 }

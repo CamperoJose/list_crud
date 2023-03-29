@@ -2,7 +2,7 @@ class ElementList {
   List<String> list = [];
   ElementList(this.list);
 
-  getList(){
+  getList() {
     return list;
   }
 
@@ -14,8 +14,13 @@ class ElementList {
     list.remove(element);
   }
 
-  editElement(String element, String newElement) {
-    list[list.indexOf(element)] = newElement;
+  editElement(String oldElement, String newElement) {
+    print("LLega aqui");
+    int index = list.indexOf(oldElement);
+    list[index] = newElement;
+    //if (index != -1) {
+    //  list[index] = newElement;
+    //}
   }
 
   String firstElement() {
@@ -25,8 +30,8 @@ class ElementList {
   String lastElement() {
     return list[list.length - 1];
   }
-
 }
 
-List<String> list = ["Hola", "Mundo", "Como", "Estas"];
+List<String> list = ["a"];
 ElementList listedElements = ElementList(list);
+String selectedValue = listedElements.firstElement();

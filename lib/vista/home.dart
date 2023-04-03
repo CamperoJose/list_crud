@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
                   value: selectedValue,
                   onChanged: (String? newValue) {
                     selectedValue = newValue!;
-                    BlocProvider.of<ListCubit>(context).CubitList();
+                    BlocProvider.of<ListCubit>(context).cubitList();
                   },
                   items: listedElements
                       .getList()
@@ -53,7 +53,7 @@ class HomePage extends StatelessWidget {
 
                 if (result == true) {
                   selectedValue = listedElements.firstElement();
-                  BlocProvider.of<ListCubit>(context).CubitList();
+                  BlocProvider.of<ListCubit>(context).cubitList();
                 }
                 
               },
@@ -81,7 +81,7 @@ class HomePage extends StatelessWidget {
                 );
 
                 if (result == true) {
-                  BlocProvider.of<ListCubit>(context).CubitList();
+                  BlocProvider.of<ListCubit>(context).cubitList();
                 }
                 
               },
@@ -108,7 +108,7 @@ class HomePage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 BlocProvider.of<ListCubit>(context)
-                    .CubitDeleteElement(selectedValue);
+                    .cubitDeleteElement(selectedValue);
                 selectedValue = listedElements.firstElement();
               },
               child: const Text(

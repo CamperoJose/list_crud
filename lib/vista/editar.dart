@@ -39,13 +39,10 @@ class EditPage extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () {
                     print("Texto a mostrar: ${myController.text}");
-                    myCubit.CubitEditElement(previousValue, myController.text);
+                    myCubit.cubitEditElement(previousValue, myController.text);
                     Navigator.pop(context, true);
                   },
-                  child: Text(
-                    'Modificar',
-                    style: TextStyle(fontSize: 18),
-                  ),
+                  
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
@@ -54,8 +51,13 @@ class EditPage extends StatelessWidget {
                     ),
                     minimumSize: MaterialStateProperty.all<Size>(Size(120, 35)),
                     backgroundColor:
-                        MaterialStateProperty.all<Color>(Color.fromARGB(255, 245, 201, 23)),
+                        MaterialStateProperty.all<Color>(const Color.fromARGB(255, 245, 201, 23)),
                   ),
+                  child: const Text(
+                    'Modificar',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  
                 ),
                 SizedBox(width: 20),
                 ElevatedButton(

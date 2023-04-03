@@ -8,26 +8,25 @@ import '../model/list.dart';
 class ListCubit extends Cubit<int> {
   ListCubit() : super(0);
 
-  void CubitAddElement(text){
+  void cubitAddElement(text){
     listedElements.addElement(text);
     selectedValue = listedElements.firstElement();
     emit(state + 1);
   }
 
-  void CubitDeleteElement(text){
+  void cubitDeleteElement(text){
     listedElements.deleteElement(text);
     selectedValue = listedElements.firstElement();
     emit(state + 1);
   }
 
-  void CubitEditElement(text, newText){
+  void cubitEditElement(text, newText){
     listedElements.editElement(text, newText);
     selectedValue = listedElements.firstElement();
     emit(state + 1);
   }
 
-  void CubitList(){
+  void cubitList(){
     emit(state + 1);
   }
-
 }

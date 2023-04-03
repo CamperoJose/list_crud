@@ -40,7 +40,7 @@ Widget build(BuildContext context) {
               children: <Widget>[
                 ElevatedButton(
                   onPressed: () {
-                    myCubit.CubitAddElement(myController.text);
+                    myCubit.cubitAddElement(myController.text);
                     Navigator.pop(context, true);
                   },
                   child: Text(

@@ -58,7 +58,7 @@ Widget build(BuildContext context) {
                         MaterialStateProperty.all<Color>(Colors.green),
                   ),
                 ),
-                SizedBox(width: 20),
+                const SizedBox(width: 20),
                 ElevatedButton(
                   onPressed: () {
                     Navigator.pop(context);
